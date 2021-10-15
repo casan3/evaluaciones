@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "evaluaciones-b9259": {
+      "hosting": {
+        "evaluaciones": [
+          "evaluaciones-b9259"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "evaluaciones-b9259"
+  }
+}
