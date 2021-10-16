@@ -2,10 +2,10 @@
   <div *ngFor="let question of (questions$ | async)">
     <h4>{{question.question}}</h4>
     <div>
-      <mat-radio-group aria-label="Select an option" [(ngModel)]="selectedAnswer" (change)="saveAnswer(question.id)">
+      <mat-radio-group aria-label="Select an option" [(ngModel)]="question.selectedAnswer" (change)="saveAnswer(question)">
         <mat-radio-button [value]="answer" *ngFor="let answer of question.answers">{{answer.answer}}</mat-radio-button>
       </mat-radio-group>
     </div>
   </div>
-  <button mat-raised-button color="primary">Enviar</button>
+  <button mat-raised-button color="primary" (click)="saveTest()" [disabled]="saving">Enviar</button>
 </div>

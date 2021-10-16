@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { collection } from '@firebase/firestore';
-import { collectionData } from 'rxfire/firestore';
-import { Observable, of } from 'rxjs';
-
-interface Test {
-  level?: string,
-  name?: string,
-  id?: string
-}
-
+import Test from 'src/app/models/tests.model';
+import { TestsService } from './tests.service';
 @Component({
   selector: 'app-tests',
   templateUrl: './tests.component.html',
@@ -18,12 +9,12 @@ interface Test {
 })
 export class TestsComponent implements OnInit {
   test: Test = {};
-  tests$: Observable<Test[]> = of();
+  tests$: Promise<Test[]> | null = null;
 
-  constructor(private firestore: Firestore, private router: Router) { }
+  constructor(private router: Router, private service: TestsService) { }
 
   ngOnInit(): void {
-    this.tests$ = <Observable<Test[]>> collectionData(collection(this.firestore, 'tests'));
+    this.tests$ = <Promise<Test[]>> this.service.getTests();
   }
 
   goToTest() {

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { GoogleAuthProvider, Auth, signInWithPopup, User } from '@angular/fire/auth';
-
+import { Auth, User } from '@angular/fire/auth';
+import { AuthService } from './auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,23 +8,17 @@ import { GoogleAuthProvider, Auth, signInWithPopup, User } from '@angular/fire/a
 })
 export class AppComponent {
   user: User | null = null;
-  constructor(public auth: Auth) {
+  constructor(private auth: AuthService, private firebaseAuth: Auth) {
     this.checkUserAuthState();
   }
   checkUserAuthState() {
-    this.auth.onAuthStateChanged((user) => {
+    this.firebaseAuth.onAuthStateChanged((user) => {
       this.user = user;
     });
   }
-  async login() {
-    const provider = new GoogleAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
-    const result = await signInWithPopup(this.auth, provider);
 
-    // The signed-in user info.
-    this.user = result.user;
-    console.log(this.user);
+  async login() {
+    this.user = await this.auth.login();
   }
   logout() {
     this.auth.signOut();
