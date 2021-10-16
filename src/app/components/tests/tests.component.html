@@ -1,0 +1,11 @@
+<div>
+  <mat-form-field appearance="fill" *ngIf="tests$ | async as tests">
+    <mat-label>Selecciona Evaluacion</mat-label>
+    <mat-select [(value)]="test">
+      <mat-option *ngFor="let test of tests" [value]="test">
+        {{test.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="goToTest()">Iniciar evaluacion</button>
+</div>
