@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth.service';
-import Answer from 'src/app/models/answers.model';
 import Question from 'src/app/models/questions.model';
+import {Result} from 'src/app/models/results.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TestService {
-  testAnswers: Array<any> = [];
+  testAnswers: Array<Result> = [];
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
@@ -20,19 +20,19 @@ export class TestService {
   }
 
   async saveAnswer(question: Question) {
-    const index = this.testAnswers.findIndex(answer => answer.question.id === question.id);
+    const index = this.testAnswers.findIndex(answer => answer.idQuestion === question.id);
     if(index > -1) {
       this.testAnswers[index].answer = question.selectedAnswer,
       this.testAnswers[index].correct = question.correctAnswer === question.selectedAnswer?.id ? true : false
     }
     else {
       this.testAnswers.push({
-        question: question,
+        idQuestion: question.id,
+        question: question.question,
         answer: question.selectedAnswer,
         correct: question.correctAnswer === question.selectedAnswer?.id ? true : false
       });
     }
-    console.log(this.testAnswers);
   }
 
   async saveTest(idTest: string | null) {

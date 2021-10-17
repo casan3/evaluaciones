@@ -15,7 +15,7 @@ export class TestComponent implements OnInit {
   idTest: string | null = null;
   saving: boolean = false;
 
-  constructor(private service: TestService, private route: ActivatedRoute) { }
+  constructor(private service: TestService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getQuestions();
@@ -35,7 +35,7 @@ export class TestComponent implements OnInit {
     this.saving = true;
     const resp = await this.service.saveTest(this.idTest);
     this.saving = false;
-    console.log(resp);
+    this.router.navigateByUrl(`/results/${this.idTest}`);
   }
 
 }

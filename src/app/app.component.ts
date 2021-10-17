@@ -9,9 +9,6 @@ import { AuthService } from './auth.service';
 export class AppComponent {
   user: User | null = null;
   constructor(private auth: AuthService, private firebaseAuth: Auth) {
-    this.checkUserAuthState();
-  }
-  checkUserAuthState() {
     this.firebaseAuth.onAuthStateChanged((user) => {
       this.user = user;
     });

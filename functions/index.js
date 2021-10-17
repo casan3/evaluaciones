@@ -44,4 +44,17 @@ app.post("/saveTest", (req, res) => {
       .catch((error) => res.status(500).send({msg: "error adding test"}));
 });
 
+app.get("/results/:idUser/:idTest", (req, res) => {
+  const {idUser, idTest} = req.params;
+  const resultsRef = db.collection(`users/${idUser}/tests`).doc(idTest);
+  resultsRef.get()
+      .then((snapshot) => {
+        if (!snapshot.exists) {
+          res.status(404).json({msg: "results not found"});
+        } else {
+          res.status(200).json(snapshot.data());
+        }
+      }).catch((error) => res.status(500).send(error));
+});
+
 exports.api = functions.https.onRequest(app);

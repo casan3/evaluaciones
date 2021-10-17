@@ -14,13 +14,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { TestComponent } from './components/test/test.component';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestsComponent,
-    TestComponent
+    TestComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { TestComponent } from './components/test/test.component';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule
   ],

@@ -1,0 +1,7 @@
+<div *ngIf="results$ | async as results">
+  <div *ngFor="let res of results.answers">
+    <p>{{res.question}}</p>
+    <p>{{res.answer?.answer}}</p>
+    <p>{{res.correct}}</p>
+  </div>
+</div>
