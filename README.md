@@ -2,7 +2,7 @@
 
 Proyecto para realizar evaluaciones de opción múltiple y mostrar el resultado al final de realizar la evaluación.
 
-## Url del proyecto
+## Url del proyecto
 
 https://evaluaciones-b9259.web.app
 
