@@ -1,5 +1,5 @@
 export const environment = {
-  apiUrl: 'http://us-central1-evaluaciones-b9259.cloudfunctions.net/api/',
+  apiUrl: 'https://us-central1-evaluaciones-b9259.cloudfunctions.net/api/',
   firebase: {
     projectId: 'evaluaciones-b9259',
     appId: '1:989911190097:web:f3988494aea16ee9b54670',
