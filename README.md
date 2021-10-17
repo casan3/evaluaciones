@@ -13,6 +13,9 @@ https://evaluaciones-b9259.web.app
 3. Contestar las preguntas de la evaluación y dar clic en enviar.
 4. Se mostraran los resultados de la evaluación.
 
+## Diagrama de flujo
+![Flowchart](/src/assets/flowchart.jpeg)
+
 
 ## Instrucciones para descargar e iniciar versión de desarrollo
 
