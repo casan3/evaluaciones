@@ -1,0 +1,19 @@
+.results-container {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 80vh;
+  padding: 15px;
+}
+
+.button-return-container {
+  margin-top: 20px;
+}
+
+.icon-correct {
+  color: green;
+}
+
+.icon-wrong {
+  color: red;
+}

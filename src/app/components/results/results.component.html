@@ -1,7 +1,12 @@
-<div *ngIf="results$ | async as results">
+<div class="results-container" *ngIf="results$ | async as results">
   <div *ngFor="let res of results.answers">
-    <p>{{res.question}}</p>
-    <p>{{res.answer?.answer}}</p>
-    <p>{{res.correct}}</p>
+    <h4>{{res.question}}</h4>
+    <p>Tu respuesta: {{res.answer?.answer}}
+      <span *ngIf="res.correct"><mat-icon class="icon-correct" aria-hidden="false" aria-label="correct">done</mat-icon></span>
+      <span *ngIf="!res.correct"><mat-icon class="icon-wrong" aria-hidden="false" aria-label="correct">close</mat-icon></span>
+    </p>
+  </div>
+  <div class="button-return-container">
+    <button mat-raised-button color="primary" routerLink="/">Volver al inicio</button>
   </div>
 </div>
