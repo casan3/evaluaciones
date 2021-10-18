@@ -37,9 +37,11 @@ export class TestService {
 
   async saveTest(idTest: string | null) {
     const url = `${environment.apiUrl}saveTest`;
-    return await <Promise<object>> this.http.post(url, {
+    const resp = await <Promise<object>> this.http.post(url, {
       idUser: this.auth.getCurrentUser()?.uid,
       test: {id: idTest,  answers: this.testAnswers}
     }).pipe(first()).toPromise();
+    this.testAnswers = [];
+    return resp;
   }
 }

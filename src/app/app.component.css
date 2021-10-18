@@ -1,0 +1,28 @@
+.login-card-container {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.login-card {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title, .card-subtitle, .card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.card-subtitle {
+  font-size: large;
+}
+
+.card-actions {
+  display: flex;
+}
+
+.button-login {
+  width: 100%;
+}

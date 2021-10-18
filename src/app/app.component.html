@@ -4,6 +4,23 @@
   <router-outlet></router-outlet>
 </div>
 <ng-template #showLogin>
-  <p>Inicia Sesion</p>
-  <button mat-raised-button color="primary" (click)="login()">Iniciar Sesion con Google</button>
+  <div class="login-card-container">
+    <mat-card class="login-card">
+      <mat-card-title class="card-title">
+        Sistema de Evaluaciones
+      </mat-card-title>
+      <mat-card-subtitle class="card-subtitle">
+        Login
+      </mat-card-subtitle>
+      <mat-card-content class="card-content">
+        <img src="assets/exam.png" alt="Evaluaciones" width="80%">
+      </mat-card-content>
+      <mat-card-actions class="card-actions">
+        <button class="button-login" mat-raised-button (click)="login()">
+          <img src="assets/google.png" alt="google" width="20px">
+          Google
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </ng-template>

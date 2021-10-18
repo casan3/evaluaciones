@@ -14,7 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatCardModule } from '@angular/material/card';
 import { TestComponent } from './components/test/test.component';
 import { ResultsComponent } from './components/results/results.component';
 
@@ -38,6 +39,7 @@ import { ResultsComponent } from './components/results/results.component';
     MatInputModule,
     MatRadioModule,
     MatProgressSpinnerModule,
+    MatCardModule,
     FormsModule,
     ReactiveFormsModule
   ],
