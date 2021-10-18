@@ -26,3 +26,13 @@
 .button-login {
   width: 100%;
 }
+
+.button-menu-container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.user-name {
+  padding: 10px;
+}

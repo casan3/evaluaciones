@@ -16,6 +16,9 @@ import { MatInputModule} from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { TestComponent } from './components/test/test.component';
 import { ResultsComponent } from './components/results/results.component';
 
@@ -40,6 +43,9 @@ import { ResultsComponent } from './components/results/results.component';
     MatRadioModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
     FormsModule,
     ReactiveFormsModule
   ],
